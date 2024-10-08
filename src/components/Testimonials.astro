@@ -1,0 +1,68 @@
+---
+const testimonials = [
+  {
+    profileURL: "oscar.jpg",
+    author: "Donna Bleaker",
+    age: 31,
+    quote:
+      "Por Tu capacidad de pensar. Tu inteligencia no solo estimula conversaciones profundas, sino que también me inspira a crecer y aprender continuamente.",
+  },
+  {
+    profileURL: "familia.jpg",
+    author: "Lauren Cross",
+    age: 28,
+    quote:
+      "Por Tu habilidad para ser una exelente mamá y siempre querer salir adelante por tu familia y por ti.",
+  },
+  {
+    profileURL: "thia.jpg",
+    author: "Thomas Xue",
+    age: 44,
+    quote:
+      "Por tu hermosura,",
+  },
+];
+---
+
+<section class="py-12 text-center">
+  <h1 class="yellowText text-5xl italic uppercase">RAZONES POR LAS QUE TE ELEGIRÍA SIEMPRE</h1>
+
+  <!-- Contenedor del carrusel -->
+  <div class="carousel-container relative max-w-2xl mx-auto overflow-hidden">
+    <!-- Carrusel automático -->
+    <div class="carousel flex">
+      {testimonials.map((profile) => (
+        <div class="carousel-item w-full flex-shrink-0 p-4">
+          <img src={'/images/' + profile.profileURL} alt="Testimonial" class="object-cover w-full h-48" />
+          <div class="yellowBG p-8">
+            <p class="pb-4 font-bold">{profile.quote}</p>
+            <small>{profile.author}, {profile.age}</small>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  animation: slide 10s infinite;
+}
+
+.carousel-item {
+  min-width: 100%;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+</style>
