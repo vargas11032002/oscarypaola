@@ -12,14 +12,14 @@ const testimonials = [
     author: "Lauren Cross",
     age: 28,
     quote:
-      "Por Tu habilidad para ser una excelente mamá y siempre querer salir adelante por tu familia y por ti.",
+      "Por Tu habilidad para ser una exelente mamá y siempre querer salir adelante por tu familia y por ti.",
   },
   {
     profileURL: "thia.jpg",
     author: "Thomas Xue",
     age: 44,
     quote:
-      "Por tu hermosura.",
+      "Por tu hermosura,",
   },
 ];
 ---
@@ -32,7 +32,7 @@ const testimonials = [
     <!-- Carrusel automático -->
     <div class="carousel flex">
       {testimonials.map((profile) => (
-        <div class="carousel-item w-full flex-shrink-0 p-4" key={profile.author}>
+        <div class="carousel-item w-full flex-shrink-0 p-4">
           <img src={'/images/' + profile.profileURL} alt="Testimonial" class="object-cover w-full h-48" />
           <div class="yellowBG p-8">
             <p class="pb-4 font-bold">{profile.quote}</p>
@@ -41,13 +41,6 @@ const testimonials = [
         </div>
       ))}
     </div>
-  </div>
-
-  <!-- Contenedor del video -->
-  <div class="video-container mt-12">
-    <video controls autoplay muted class="w-full">
-      <source src="./video.mp4" type="video/mp4" />
-    </video>
   </div>
 </section>
 
@@ -71,15 +64,5 @@ const testimonials = [
   33% { transform: translateX(-100%); }
   66% { transform: translateX(-200%); }
   100% { transform: translateX(0); }
-}
-
-.video-container {
-  max-width: 800px; /* Ajusta según sea necesario */
-  margin: 0 auto; /* Centra el video */
-}
-
-video {
-  width: 100%; /* Hace que el video sea responsivo */
-  height: auto; /* Mantiene la proporción del video */
 }
 </style>
